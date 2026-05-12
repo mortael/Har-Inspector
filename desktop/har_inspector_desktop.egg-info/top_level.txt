@@ -1,3 +1,0 @@
-har_inspector_desktop
-installer
-scripts
