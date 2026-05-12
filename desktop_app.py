@@ -224,7 +224,7 @@ class HarInspectorDesktop(ctk.CTk):
             return
         status_text = self.status_var.get().strip()
         if not status_text.isdigit():
-            messagebox.showerror("Validation error", "Status must contain only digits (0 or greater).")
+            messagebox.showerror("Validation error", "Status must be a valid non-negative integer.")
             return
 
         entry = self.har_data["log"]["entries"][self.current_index]
@@ -312,6 +312,7 @@ class HarInspectorDesktop(ctk.CTk):
 
 
 def _safe_int(value: object) -> int:
+    # bool is intentionally excluded so True/False are not treated as 1/0 in HAR fields.
     if isinstance(value, bool) or not isinstance(value, (int, float, str)):
         return 0
     try:
