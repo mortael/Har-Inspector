@@ -312,8 +312,8 @@ class HarInspectorDesktop(ctk.CTk):
 
 
 def _safe_int(value: object) -> int:
-    # bool is intentionally excluded so True/False are not treated as 1/0 in HAR fields.
-    # Negative numeric values are clamped to 0 for consistent UI aggregation/display.
+    # Exclude bool so True/False are not treated as 1/0 in HAR fields.
+    # Clamp negative numeric values to 0 for consistent UI aggregation and display.
     if isinstance(value, bool) or not isinstance(value, (int, float, str)):
         return 0
     try:
