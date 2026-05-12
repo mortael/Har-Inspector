@@ -1,20 +1,41 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# HAR Inspector (Desktop)
 
-# Run and deploy your AI Studio app
+HAR Inspector is now a Python desktop app built with **customtkinter**.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/5a5a1cae-77d2-4b56-8675-e6c9be4344db
+- Open `.har` / `.json` HAR files locally
+- Filter entries by URL and HTTP method
+- Inspect full entry details
+- Edit URL, method, and response status for any entry
+- Remove selected entries
+- Save modified HAR files
+- Export filtered rows to CSV
 
-## Run Locally
+## Run locally
 
-**Prerequisites:**  Node.js
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements-desktop.txt
+python desktop_app.py
+```
 
+## Build Windows EXE (small single-file build)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+pip install -r requirements-desktop.txt
+pyinstaller --clean --noconfirm har_inspector_desktop.spec
+```
+
+Output binary: `dist/har-inspector.exe`
+
+## Build Windows installer
+
+Use [Inno Setup](https://jrsoftware.org/isinfo.php) with:
+
+```text
+installer_windows.iss
+```
+
+Output installer: `dist/har-inspector-setup.exe`
