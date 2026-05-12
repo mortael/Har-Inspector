@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+./har_inspector_desktop/__init__.py
+./har_inspector_desktop/__main__.py
+./har_inspector_desktop/gui.py
+./har_inspector_desktop/har.py
+har_inspector_desktop.egg-info/PKG-INFO
+har_inspector_desktop.egg-info/SOURCES.txt
+har_inspector_desktop.egg-info/dependency_links.txt
+har_inspector_desktop.egg-info/entry_points.txt
+har_inspector_desktop.egg-info/requires.txt
+har_inspector_desktop.egg-info/top_level.txt

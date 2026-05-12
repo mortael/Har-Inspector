@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "har-inspector-desktop"
+version = "0.1.0"
+description = "HAR Inspector desktop app"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "customtkinter>=5.2.2",
+]
+
+[project.scripts]
+har-inspector-desktop = "har_inspector_desktop.__main__:main"
+
+[project.optional-dependencies]
+build = [
+  "pyinstaller>=6.6",
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
