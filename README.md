@@ -18,3 +18,10 @@ View your app in AI Studio: https://ai.studio/apps/5a5a1cae-77d2-4b56-8675-e6c9b
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Desktop App (Python)
+
+A native desktop build is available in `desktop/` using `customtkinter`:
+
+- Run: `cd desktop && python -m venv .venv && . .venv/bin/activate && python -m pip install -e . && python -m har_inspector_desktop`
+- Build EXE + installer: see `desktop/README.md`
