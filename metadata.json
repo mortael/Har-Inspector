@@ -1,0 +1,5 @@
+{
+  "name": "HAR Inspector & Converter",
+  "description": "A powerful tool to analyze, modify, and convert HTTP Archive (HAR) files with a developer-friendly interface.",
+  "requestFramePermissions": []
+}
