@@ -1,0 +1,5 @@
+customtkinter>=5.2.0
+Pillow>=10.0.0
+
+# Build tools (optional - only needed for creating executable)
+pyinstaller>=6.0.0
