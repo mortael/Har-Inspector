@@ -317,7 +317,7 @@ def _safe_int(value: object) -> int:
         return 0
     try:
         return max(0, int(value))
-    except (TypeError, ValueError):
+    except ValueError:
         return 0
 
 
@@ -326,7 +326,9 @@ def _shorten(text: str, max_len: int) -> str:
 
 
 def _format_bytes(size: int) -> str:
-    if size <= 0:
+    if size < 0:
+        return "Invalid"
+    if size == 0:
         return "0 B"
     units = ["B", "KB", "MB", "GB"]
     amount = float(size)
