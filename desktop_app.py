@@ -224,7 +224,7 @@ class HarInspectorDesktop(ctk.CTk):
             return
         status_text = self.status_var.get().strip()
         if not status_text.isdigit():
-            messagebox.showerror("Validation error", "Status must be a valid non-negative integer.")
+            messagebox.showerror("Validation error", "Status must use digits only (negative values are not allowed).")
             return
 
         entry = self.har_data["log"]["entries"][self.current_index]
@@ -326,9 +326,7 @@ def _shorten(text: str, max_len: int) -> str:
 
 
 def _format_bytes(size: int) -> str:
-    if size < 0:
-        return "Invalid"
-    if size == 0:
+    if size <= 0:
         return "0 B"
     units = ["B", "KB", "MB", "GB"]
     amount = float(size)
